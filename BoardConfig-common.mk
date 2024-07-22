@@ -1,6 +1,5 @@
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
-TARGET_BOARD_INFO_FILE := $(LOCAL_PATH)/board-info.txt
 BOARD_HAS_MTK_HARDWARE := true
 
 # Bootloader
