@@ -1,8 +1,6 @@
-DEVICE_PATH := device/samsung/a03s
-
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+TARGET_BOARD_INFO_FILE := $(LOCAL_PATH)/board-info.txt
 BOARD_HAS_MTK_HARDWARE := true
 
 # Bootloader
@@ -62,7 +60,7 @@ BOARD_MKBOOTIMG_ARGS += \
 BOARD_USES_METADATA_PARTITION := true
 
 # Recovery 
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6765
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.mt6765
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBA_8888
 
@@ -177,20 +175,20 @@ DEVICE_MANIFEST_FILE := \
 	vendor.samsung.hardware.wifi.hostapd.xml \
 	vendor.samsung.hardware.wifi@2.0-service.xml
 
-DEVICE_MATRIX_FILE := $(LOCAL_PATH)/configs/hidl/compatibility_matrix.xml
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.xml
+#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(LOCAL_PATH)/vintf/framework_compatibility_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # VNDK
 BOARD_VNDK_VERSION := current
 
 TARGET_RECOVERY_INITRC := \
-    $(DEVICE_PATH)/recovery/root/init.recovery.mt6765.rc \
-    $(DEVICE_PATH)/recovery/root/init.recovery.samsung.rc
+    $(LOCAL_PATH)/recovery/root/init.recovery.mt6765.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.samsung.rc
 
 -include vendor/samsung/mt6765/BoardConfigVendor.mk
 
