@@ -149,33 +149,33 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # VINTF
 DEVICE_MANIFEST_FILE := \
-	$(LOCAL_PATH)/configs/hidl/manifest.xml \
-	android.hardware.dumpstate@1.1-service-lazy.xml \
-	android.hardware.health@2.1-samsung.xml \
-	android.hardware.usb@1.3-service.coral.xml \
-	android.hardware.wifi.hostapd.xml \
-	android.hardware.wifi.supplicant.xml \
-	android.hardware.wifi@1.0-service.xml \
-	engmode_manifest.xml \
-	hyper-default-sec.xml \
-	lights-default-sec.xml \
-	manifest_android.hardware.drm@1.4-service.clearkey.xml \
-	manifest_android.hardware.drm@1.4-service.widevine.xml \
-	manifest_hwcomposer.xml \
-	power-default.xml \
-	sec_c2_manifest_default0_1_2.xml \
-	vaultkeeper_manifest.xml \
-	vendor.samsung.hardware.radio.exclude.mediatek.xml \
-	vendor.samsung.hardware.radio_manifest_2_30.xml \
-	vendor.samsung.hardware.security.widevine.keyprov-service.xml \
-	vendor.samsung.hardware.sehradio_manifest_2_30.xml \
-	vendor.samsung.hardware.tlc.kg@1.1-manifest.xml \
-	vendor.samsung.hardware.vibrator-default.xml \
-	vendor.samsung.hardware.wifi.hostapd.xml \
-	vendor.samsung.hardware.wifi@2.0-service.xml
+	$(LOCAL_PATH)/vintf/manifest.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.dumpstate@1.1-service-lazy.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.health@2.1-samsung.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.usb@1.3-service.coral.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.wifi.hostapd.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.wifi.supplicant.xml \
+	$(LOCAL_PATH)/vintf/manifest/android.hardware.wifi@1.0-service.xml \
+	$(LOCAL_PATH)/vintf/manifest/engmode_manifest.xml \
+	$(LOCAL_PATH)/vintf/manifest/hyper-default-sec.xml \
+	$(LOCAL_PATH)/vintf/manifest/lights-default-sec.xml \
+	$(LOCAL_PATH)/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml \
+	$(LOCAL_PATH)/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml \
+	$(LOCAL_PATH)/vintf/manifest/manifest_hwcomposer.xml \
+	$(LOCAL_PATH)/vintf/manifest/power-default.xml \
+	$(LOCAL_PATH)/vintf/manifest/sec_c2_manifest_default0_1_2.xml \
+	$(LOCAL_PATH)/vintf/manifest/vaultkeeper_manifest.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.radio.exclude.mediatek.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_30.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.security.widevine.keyprov-service.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_30.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.tlc.kg@1.1-manifest.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.vibrator-default.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.wifi.hostapd.xml \
+	$(LOCAL_PATH)/vintf/manifest/vendor.samsung.hardware.wifi@2.0-service.xml
 
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/vintf/compatibility_matrix.xml
-#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(LOCAL_PATH)/vintf/framework_compatibility_matrix.xml \
     vendor/aosp/config/device_framework_matrix.xml
 
@@ -189,7 +189,7 @@ TARGET_RECOVERY_INITRC := \
     $(LOCAL_PATH)/recovery/root/init.recovery.mt6765.rc \
     $(LOCAL_PATH)/recovery/root/init.recovery.samsung.rc
 
--include vendor/samsung/mt6765/BoardConfigVendor.mk
+include vendor/samsung/mt6765/BoardConfigVendor.mk
 
 # Sepolicy
 -include device/mediatek/sepolicy_vndr/SEPolicy.mk
