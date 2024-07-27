@@ -1,0 +1,32 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+## Physical Partition
+/boot           emmc        /dev/block/platform/bootdevice/by-name/boot             flags=display=boot;backup=1;flashimg=1;slotselect
+/cache          ext4        /dev/block/platform/bootdevice/by-name/cache            flags=display=cache
+/carrier        ext4        /dev/block/platform/bootdevice/by-name/carrier          flags=display=carrier
+/data           f2fs        /dev/block/platform/bootdevice/by-name/userdata         flags=display=data
+/dtbo           emmc        /dev/block/platform/bootdevice/by-name/dtbo             flags=display=dtbo;backup=1;flashimg=1;slotselect
+/efs            ext4        /dev/block/platform/bootdevice/by-name/sec_efs          flags=display=efs;backup=1;flashimg=1;slotselect
+/metadata       ext4        /dev/block/platform/bootdevice/by-name/md_udc           flags=display=metadata
+/misc           emmc        /dev/block/platform/bootdevice/by-name/misc             flags=display=misc
+/recovery       emmc        /dev/block/platform/bootdevice/by-name/recovery         flags=display="Recovery";backup=1;flashimg=1;slotselect
+/vbmeta         emmc        /dev/block/bootdevice/by-name/vbmeta                    flags=display="VBMeta";backup=1;flashimg=1;slotselect
+
+## Logical Partition
+odm             f2fs        /odm                                                    flags=display="ODM";logical;backup=1;flashimg=1
+product         f2fs        /product                                                flags=display="Product";logical;backup=1;flashimg=1
+system          f2fs        /system                                                 flags=display="System";logical;backup=1;flashimg=1
+vendor          f2fs        /vendor                                                 flags=display="Vendor";logical;backup=1flashimg=1
+
+## Removable Disk
+### Micro SD
+/external_sd    vfat        /dev/block/mmcblk1p1 /dev/block/mmcblk1                 flags="External SDCard";wipeingui;removable
+
+### USB OTG
+/usb-otg        vfat        /dev/block/sda1 /dev/block/sda                          flags=display="USB-OTG";wipeingui;removable
+
+## Samsung ODE
+#/keydata       ext4        /dev/block/platform/bootdevice/by-name/keydata          flags=display=keydata
+#/keyrefuge     f2fs        /dev/block/platform/bootdevice/by-name/keyrefuge        flags=display=keyrefuge
