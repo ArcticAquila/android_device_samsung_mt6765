@@ -1,6 +1,4 @@
-$(call inherit-product, vendor/twrp/config/common.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
+-include $(LOCAL_PATH)/twrp-common.mk
 
 # Product information
 PRODUCT_NAME := twrp_a04e
